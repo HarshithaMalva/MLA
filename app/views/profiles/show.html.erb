@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag(@profile.image.url) if @profile.image %>
+<p>
+  <strong>Name:</strong>
+  <%= @profile.name %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @profile.dob %>
+</p>
+
+<p>
+  <strong>Education:</strong>
+  <%= @profile.education %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @profile.gender %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @profile.phone %>
+</p>
+
+<p>
+  <strong>Proffession:</strong>
+  <%= @profile.proffession %>
+</p>
+
+<p>
+  <strong>Political career:</strong>
+  <%= @profile.political_career %>
+</p>
+
+<p>
+  <strong>Other activity:</strong>
+  <%= @profile.other_activity %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @profile.address %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user_id %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @profile.position_id %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
