@@ -3,8 +3,11 @@
 <div class="row">
 
 <p id="notice"><%= notice %></p>
-<%#= image_tag(@post.avatar_url) %>
-<%= video_tag(@post.avatar_url) %>
+<%if @post.post_type.name == "Image"%>
+  <%= image_tag(@post.avatar_url) %>
+<%else %>
+      <iframe src="<%=@post.avatar_url%>" ></iframe>
+<%end%>
 <p>
   <strong>Title:</strong>
   <%= @post.title %>

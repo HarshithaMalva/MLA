@@ -1,30 +1,27 @@
 class Post < ActiveRecord::Base
 	mount_uploader :avatar, AvatarUploader
-	belongs_to :comment
-	has_many :post_types
+	has_many :comment
+	belongs_to :post_type
+	validates_presence_of :title, :avatar, :post_type_id
+	AUDIO = ["mp3", "wav"]
+	VIDEO = ["mp4", "avi", "wmv", "mov"]
+	IMAGE = ["jpeg", "jpg", "png", "gif"]
 
 
-	before_save :check_extension
-	before_save :save_or_not
+	validate :check_extension
+
 
 	def check_extension
-		if self.split(".").last == "jpeg" || self.split(".").last == "png" 
-			return 1
-		elsif self.split(".").last == "mp4" || self.split(".").last == "avi"
-			return 2
-		elsif self.split(".").last == "mp3" || self.split(".").last == "mp5"
-			return 3
+		if avatar.present?
+			if post_type.name == "Audio"  && AUDIO.exclude?(avatar.file.extension)
+				errors.add(:file_type, "Invalid Audio File")
+			elsif post_type.name == "Video"  && VIDEO.exclude?(avatar.file.extension)
+				errors.add(:file_type, "Invalid Video File")
+			elsif post_type.name == "Image"  && IMAGE.exclude?(avatar.file.extension)
+				errors.add(:file_type, "Invalid Image File")
+			end
 		end
 	end
-
-	def save_or_not
-		if self.post_type.id == 1 && self.check_extension == 1 || self.post_type.id == 2 && self.check_extension == 2 || self.post_type.id == 3 && self.check_extension == 3
-			self.save
-		else
-			error
-		end
-	end
-
 		
 	
 end
