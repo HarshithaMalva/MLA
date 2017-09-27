@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label :dob %><br>
-    <%= f.text_field :dob %>
+    <%= f.text_field :dob, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :education %><br>
-    <%= f.text_area :education %>
+    <%= f.text_area :education, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :gender %> <br />
@@ -37,28 +37,31 @@
   </div>
   <div class="field">
     <%= f.label :phone %><br>
-    <%= f.number_field :phone %>
+    <%= f.number_field :phone, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :proffession %><br>
-    <%= f.text_area :proffession %>
+    <%= f.text_area :proffession, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :political_career %><br>
-    <%= f.text_area :political_career %>
+    <%= f.text_area :political_career, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :other_activity %><br>
-    <%= f.text_area :other_activity %>
+    <%= f.text_area :other_activity, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :address %><br>
-    <%= f.text_area :address %>
+    <%= f.text_area :address, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
+   <!-- <div class="field">
+    <%# f.label :user_id %><br>
+    <%# f.number_field :user_id %>
+  </div>  -->
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
   <div class="field">
     <%= f.label :position_id %><br>
     <%= f.collection_select :position_id, Position.all, :id, :name, prompt: "Select Your Position" %>
@@ -66,6 +69,7 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+ 
 <% end %>
 <script>
   $( function() {

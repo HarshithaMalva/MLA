@@ -27,15 +27,18 @@
     <%= f.label :post_type_id %><br>
     <%= f.collection_select :post_type_id, PostType.all, :id, :name, prompt: "Select your Posting" %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
+  <!-- <div class="field">
+    <%#= f.label :user_id %><br>
+    <%#= f.number_field :user_id %>
+  </div> -->
+  <%= f.hidden_field :user_id, :value => current_user.id %>
 
     <div class="field">
     <%= f.label :avatar %><br>
     <%= f.file_field :avatar %>
   </div>
+
+  
 
   <div class="actions">
     <%= f.submit %>
