@@ -1,8 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Profiles</h1>
+<section class="inner-section">
 <div class="container">
-<table>
+<div class="row">
+
+<h2 class="heading">Listing Profiles</h2>
+
+<table class="table table-bordered" id="main-table">
   <thead>
     <tr>
       <th>Name</th>
@@ -41,7 +43,11 @@
     <% end %>
   </tbody>
 </table>
+<button type="button" class="btn btn-primary"><%= link_to 'New Profile', new_profile_path %></button>
+
 </div>
+</div>
+</section>
 <br>
 
-<%= link_to 'New Profile', new_profile_path %>
+

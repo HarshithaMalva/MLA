@@ -1,59 +1,70 @@
+<section class="inner-section">
+<div class="container">
+<div class="row">
 <p id="notice"><%= notice %></p>
-<%= image_tag(@profile.image.url) if @profile.image %>
+<div class="col-md-4">
+  <%= image_tag(@profile.image.url) if @profile.image %>
+</div>
+<div class="col-md-8">
 <p>
   <strong>Name:</strong>
   <%= @profile.name %>
-</p>
+</p><hr>
 
 <p>
   <strong>Dob:</strong>
   <%= @profile.dob %>
-</p>
+</p><hr>
 
 <p>
   <strong>Education:</strong>
   <%= @profile.education %>
-</p>
+</p><hr>
 
 <p>
   <strong>Gender:</strong>
   <%= @profile.gender %>
-</p>
+</p><hr>
 
 <p>
   <strong>Phone:</strong>
   <%= @profile.phone %>
-</p>
-
+</p><hr>
+</div>
 <p>
   <strong>Proffession:</strong>
   <%= @profile.proffession %>
-</p>
+</p><hr>
 
 <p>
   <strong>Political career:</strong>
   <%= @profile.political_career %>
-</p>
+</p><hr>
 
 <p>
   <strong>Other activity:</strong>
   <%= @profile.other_activity %>
-</p>
+</p><hr>
 
 <p>
   <strong>Address:</strong>
   <%= @profile.address %>
-</p>
+</p><hr>
 
-<p>
+<!-- <p>
   <strong>User:</strong>
   <%= @profile.user_id %>
-</p>
-
+</p><hr>
+ -->
+<%#= f.hidden_field :client_case_id, value: @client_case.id %> 
 <p>
   <strong>Position:</strong>
   <%= @profile.position_id %>
-</p>
+</p><hr>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
+</div>
+</div>
+
+</section>

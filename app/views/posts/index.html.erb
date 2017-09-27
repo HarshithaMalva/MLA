@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
-
+<section class="inner-section">
+<div class="container">
+<div class="row">
 <h1>Listing Posts</h1>
 
-<table>
+<table class="table table-bordered" id="main-table">
   <thead>
     <tr>
       <th>Title</th>
@@ -31,5 +32,9 @@
 </table>
 
 <br>
+<button type="button" class="btn btn-primary"><%= link_to 'New Post', new_post_path %></button>
 
-<%= link_to 'New Post', new_post_path %>
+
+</div>
+</div>
+</section>
