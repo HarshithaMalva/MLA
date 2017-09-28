@@ -64,11 +64,12 @@
 
   <div class="field">
     <%= f.label :position_id %><br>
-    <%= f.collection_select :position_id, Position.all, :id, :name, prompt: "Select Your Position" %>
-  </div>
+    <%= f.collection_select :position_id, Position.all, :id, :name, prompt: "Select Your Position", class: "form-control" %>
+  </div><br>
+
   <div class="actions">
     <%= f.submit %>
-  </div>
+  </div><br>
  
 <% end %>
 <script>
