@@ -86,3 +86,10 @@ h2.heading {
     text-align: center;
     padding: 20px;
 }
+.home-box {
+    border: 1px solid #fbfbfb;
+    background-color: #fbfbfb;
+    padding: 20px;
+    text-align: center;
+    margin-top: 60px;
+}
